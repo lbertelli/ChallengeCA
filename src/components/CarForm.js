@@ -59,7 +59,6 @@ export default function ContactForm() {
           </MenuItem>
         ))}
       </Select>
-
       <Select
         label="Brand"
         variant="outlined"
@@ -71,7 +70,7 @@ export default function ContactForm() {
         disabled={!selectedYear}
       >
         <MenuItem value="">-- Select Brand --</MenuItem>
-        {brandOptions.map((brand) => (
+           {Array.from(new Set(brandOptions.map((brandOptions) => brandOptions))).map((brand) => (
           <MenuItem key={brand} value={brand}>
             {brand}
           </MenuItem>
@@ -89,7 +88,7 @@ export default function ContactForm() {
         disabled={!selectedBrand}
       >
         <MenuItem value="">-- Select Model --</MenuItem>
-        {modelOptions.map((model) => (
+          {Array.from(new Set(modelOptions.map((modelOptions) => modelOptions))).map((model) => (
           <MenuItem key={model} value={model}>
             {model}
           </MenuItem>
